@@ -1,5 +1,3 @@
-// script.js
-
 const materias = document.querySelectorAll('.materia');
 const estadoGuardado = JSON.parse(localStorage.getItem('materias-aprobadas')) || {};
 
@@ -14,12 +12,8 @@ const previas = {
     "Enfermería", "Metodología Científica", "Biología Celular y Tisular (BCyT)", "Anatomía", "Salud Pública", "Psicología",
     "Neurobiología", "Cardio y Respiratorio", "Digestivo, Renal y Endocrino", "Reproductor y Desarrollo", "Profundización", "Bioquímica"
   ],
-  "Unidad temática 1": [
-    "Biofísica", "Farmacología", "Fisiopatología y Patología"
-  ],
-  "Unidad temática 5": [
-    "Biofísica", "Farmacología", "Fisiopatología y Patología"
-  ],
+  "Unidad temática 1": ["Biofísica", "Farmacología", "Fisiopatología y Patología"],
+  "Unidad temática 5": ["Biofísica", "Farmacología", "Fisiopatología y Patología"],
   "Unidad temática 2": ["Unidad temática 1"],
   "Unidad temática 3": ["Unidad temática 1"],
   "Unidad temática 4": ["Unidad temática 1"],
@@ -27,31 +21,28 @@ const previas = {
   "Unidad temática 7": ["Unidad temática 5"],
   "Unidad temática 8": ["Unidad temática 5"],
   "Internado": [
-    "Unidad temática 8",
+    "Unidad temática 8", "Unidad temática 4",
     "Enfermería", "Metodología Científica", "Biología Celular y Tisular (BCyT)", "Anatomía", "Salud Pública", "Psicología",
     "Neurobiología", "Cardio y Respiratorio", "Digestivo, Renal y Endocrino", "Reproductor y Desarrollo",
-    "Fisica", "Profundización", "Bioquímica",
+    "Fisica", "Profundización", "Bioquímica", "Biofísica",
     "Farmacología", "Fisiopatología y Patología",
-    "Biofísica",
-    "Unidad temática 1", "Unidad temática 2", "Unidad temática 3", "Unidad temática 4",
-    "Unidad temática 5", "Unidad temática 6", "Unidad temática 7"
+    "Unidad temática 1", "Unidad temática 2", "Unidad temática 3", "Unidad temática 5", "Unidad temática 6", "Unidad temática 7"
   ],
   "Monografía": [
-    "Unidad temática 8",
+    "Unidad temática 8", "Unidad temática 4",
     "Enfermería", "Metodología Científica", "Biología Celular y Tisular (BCyT)", "Anatomía", "Salud Pública", "Psicología",
     "Neurobiología", "Cardio y Respiratorio", "Digestivo, Renal y Endocrino", "Reproductor y Desarrollo",
-    "Fisica", "Profundización", "Bioquímica",
+    "Fisica", "Profundización", "Bioquímica", "Biofísica",
     "Farmacología", "Fisiopatología y Patología",
-    "Biofísica",
-    "Unidad temática 1", "Unidad temática 2", "Unidad temática 3", "Unidad temática 4",
-    "Unidad temática 5", "Unidad temática 6", "Unidad temática 7"
+    "Unidad temática 1", "Unidad temática 2", "Unidad temática 3", "Unidad temática 5", "Unidad temática 6", "Unidad temática 7"
   ]
 };
 
 function actualizarEstado() {
+  const completas = Object.keys(estadoGuardado).filter(m => estadoGuardado[m]);
+
   materias.forEach(materia => {
     const nombre = materia.dataset.nombre;
-    const completas = Object.keys(estadoGuardado).filter(m => estadoGuardado[m]);
     const requisitos = previas[nombre] || [];
     const habilitada = requisitos.every(req => completas.includes(req));
 
@@ -69,7 +60,7 @@ materias.forEach(materia => {
     materia.classList.add('completed');
   }
 
-  materia.addEventListener('click', e => {
+  materia.addEventListener('click', () => {
     if (materia.classList.contains('locked')) return;
 
     materia.classList.toggle('completed');
