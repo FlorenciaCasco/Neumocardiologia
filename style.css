@@ -4,7 +4,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #FDFBFC; /* fondo general - neutro pastel */
+  background-color: #FDFBFC;
   color: #444;
 }
 
@@ -14,7 +14,7 @@ html, body {
   font-size: 28px;
   font-weight: bold;
   margin: 30px 0 20px 0;
-  color: #8F9ECE; /* azul suave (de la paleta: Seastone) */
+  color: #8F9ECE;
 }
 
 /* === CONTENEDOR GENERAL === */
@@ -28,7 +28,7 @@ html, body {
 
 /* === COLUMNA DE AÑO === */
 .año {
-  background-color: #FFF9F6; /* fondo suave tipo lino */
+  background-color: #FFF9F6;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   padding: 15px 20px;
@@ -38,13 +38,13 @@ html, body {
 
 /* === CABECERA DE AÑO === */
 .año h2 {
-  background-color: #FFE8A3; /* amarillo manteca suave */
+  background-color: #FFE8A3;
   padding: 10px;
   border-radius: 8px;
   font-size: 20px;
   margin-bottom: 12px;
   text-align: center;
-  color: #8F9ECE; /* azul armonioso */
+  color: #8F9ECE;
 }
 
 /* === TÍTULO SEMESTRE === */
@@ -52,13 +52,13 @@ html, body {
   margin: 14px 0 8px;
   font-weight: bold;
   font-size: 15px;
-  color: #8F9ECE; /* azul pastel */
+  color: #8F9ECE;
   text-align: center;
 }
 
 /* === MATERIA === */
 .materia {
-  background-color: #DCEBF7; /* celeste claro – Ocean Air */
+  background-color: #DCEBF7;
   color: #2f2f2f;
   border-radius: 8px;
   padding: 10px;
@@ -69,28 +69,24 @@ html, body {
   box-shadow: 0 1px 3px rgba(0,0,0,0.03);
 }
 
-/* === MATERIA HOVER === */
 .materia:hover {
-  background-color: #A7BDD8; /* azul más saturado – Seastone */
+  background-color: #A7BDD8;
   color: #fff;
 }
 
-/* === MATERIA COMPLETADA === */
 .materia.completed {
-  background-color: #D7EDD6; /* verde claro – Sage */
+  background-color: #D7EDD6;
   text-decoration: line-through;
   color: #2d5c3b;
 }
 
-/* === MATERIA BLOQUEADA === */
 .materia.locked {
   background-color: #eeeeee;
   color: #aaa;
   cursor: not-allowed;
-  text-decoration: none;
 }
 
-/* === BOTÓN DE REINICIO === */
+/* === BOTÓN === */
 button {
   margin: 30px auto;
   display: block;
