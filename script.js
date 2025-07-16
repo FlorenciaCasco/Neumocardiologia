@@ -1,0 +1,1 @@
+(El contenido del script corregido sin errores de tipeo será pegado aquí después para no cortar el bloque Python)
